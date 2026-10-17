@@ -8,6 +8,9 @@ motion system, and hand-drawn controls from the **drawably** UI library.
 > **Student:** Sana Ammar · **ID:** 202337790
 > ** repository name:** `202337790-SanaAmmar-assignment2`
 
+
+**preview link:** [marvelous-llama-5a595b.netlify.app](https://marvelous-llama-5a595b.netlify.app/)
+
 **Design constraints:** no gradients and no shadows — depth comes from the
 hand-drawn **drawably** sketches, thin rules, spacing and hover tints.
 
