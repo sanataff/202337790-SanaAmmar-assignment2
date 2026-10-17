@@ -29,8 +29,9 @@ Some examples of the prompts I used:
 
 - “Move my portfolio to React and TypeScript while keeping its content and
   simple design.”
-- “Let visitors search, filter and sort projects, and expand a card to read
-  more.”
+- "create for me a panel on the web to help me experiment with different color combinations" 
+- "create for me a panel on the web to help me experiment with different layout options" 
+-" do not use gradients or heavy shadows in the design "
 - “Help me understand and fix this TypeScript build error.”
 
 ## Benefits and challenges
@@ -39,15 +40,28 @@ AI helped me get a first version of the site in place faster and gave me a
 useful way to think through how to organise the components. It was also helpful
 when I needed an explanation for an error or wanted to compare possible
 solutions.
+It really helped with experimentation quickly, for example, I asked the LLM to give me web view panel where I can adjust colors and layout on the web so I can see the changes immediatly and decide quickly, it is like using figma, but in dev. 
 It helped me create sophisticated components, like the "jump to top" component. 
 It helped me integrate the ui component "darawbly"
 It helped me experiment with different layouts and color combinations quickly 
 
 The suggestions were not always right. For example, some names did not match
-between files, and an early version updated state inside an effect in a way
-that ESLint flagged. I had to check the code, understand the issues and decide
+between files. I had to check the code, understand the issues and decide
 what to change. AI also missed details that mattered to this project, such as
 making it clear that the contact form does not actually send a message.
+
+
+## Learning Outcomes 
+
+- I learned how to break a larger React application into focused components and
+  reusable hooks, and how to pass data and state between them in a way that
+  keeps the code easier to maintain.
+- I improved my understanding of TypeScript and React state by implementing
+  interactive features such as project filtering, theme preferences and form
+  validation, then checking that their behaviour matched the interface.
+- I learned how to use AI more paragmatically, for example, asking ai for a big task and let it generate 10 files is a bad approch, I broke down the tasks into smaller ones and started doing them one by one with ai 
+- I learnt how to use skills to enhance the outcomes of AI 
+
 
 ## Changes I made
 
@@ -57,7 +71,7 @@ that a message was sent.
 
 ## How I checked the work
 
-I ran `npm run build` and the linter. I also checked how the interactive
+I ran `npm run build`.  I also checked how the interactive
 features should behave, including project search and filters, theme
 preferences, form validation and repository loading states. Finally, I
 reviewed the layout at desktop and mobile widths.

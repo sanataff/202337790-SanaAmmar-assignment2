@@ -26,8 +26,7 @@ tints.
 | Language | TypeScript | Catches mistakes (wrong prop / field names) at build time |
 | Styling | Plain CSS + custom properties | Small surface, easy theming, no shadows/gradients |
 | Components | [drawably](https://www.drawably.dev/) v0.4.2 | Hand-drawn (sketched) buttons, inputs, tabs, cards, alerts, badges, dividers and lists |
-| Fonts | Inter (sans), Instrument Serif (accent), system mono | Editorial feel |
-| Linting | ESLint (typescript-eslint + react-hooks) | Enforces React best practices |
+
 
 The only runtime dependency beyond React and React DOM is drawably, which is
 zero-dependency itself.
@@ -35,8 +34,16 @@ zero-dependency itself.
 ## 3. Project Structure
 
 ```text
-my-project/
-├── index.html                     Vite entry (+ pre-paint theme script)
+202337790-SanaAmmar-assignment2/
+├── index.html                     Vite HTML entry
+├── package.json                   Dependencies and npm scripts
+├── package-lock.json              Locked dependency versions
+├── vite.config.ts                 Vite configuration
+├── eslint.config.js               ESLint configuration
+├── tsconfig.json                  Shared TypeScript configuration
+├── tsconfig.app.json              Application TypeScript configuration
+├── tsconfig.node.json             Tooling TypeScript configuration
+├── .gitignore
 ├── src/
 │   ├── main.tsx                   React bootstrap
 │   ├── App.tsx                    Page composition
@@ -47,30 +54,26 @@ my-project/
 │   ├── lib/
 │   │   └── scroll.ts              Smooth scrolling (reduced-motion aware)
 │   ├── hooks/
-│   │   ├── useLocalStorage.ts        Persistence with safe error handling
-│   │   ├── useTheme.ts               Light/dark theme + data-theme attribute
-│   │   ├── useRevealOnScroll.ts      IntersectionObserver reveal
+│   │   ├── useLocalStorage.ts      Persistence with safe error handling
+│   │   ├── useTheme.ts             Light/dark theme + data-theme attribute
+│   │   ├── useRevealOnScroll.ts    IntersectionObserver reveal
 │   │   └── usePrefersReducedMotion.ts Tracks the reduced-motion setting
 │   └── components/
 │       ├── Header.tsx             Nav, greeting, theme toggle, hero
 │       ├── About.tsx              Bio + scroll-linked word reveal
 │       ├── Projects.tsx           Search / filter / sort / expand + empty state
-│       ├── Stack.tsx              drawably tab switcher + checked list
+│       ├── Stack.tsx              drawably tab switcher + toolkit list
 │       ├── Contact.tsx            Validated form + animated confirmation
-│       ├── TableFigure.tsx        Frames the Hairline figure (theme, width, height)
 │       ├── Footer.tsx             Giant slide-up name + meta bar
 │       ├── BackToTop.tsx          Floating back-to-top button
-│       ├── MaskedText.tsx         Line-slide-up heading reveal
+│       ├── MaskedText.tsx        Line-slide-up heading reveal
 │       ├── Reveal.tsx             Fade / rise / blur-in wrapper
 │       └── WordsReveal.tsx        Scroll-linked word-by-word paragraph
-├── public/                        favicon.svg; hairline-table.html (the figure)
-├── hairline/                      table.js — the figure's source
-│                                  hairline-table.html — built page
-│                                  hairline-table-*.png — look sheets
+├── public/
+│   └── favicon.svg
 ├── docs/
 │   ├── ai-usage-report.md
 │   └── technical-documentation.md
-├── .gitignore
 └── README.md
 ```
 
@@ -84,18 +87,8 @@ my-project/
 | **Error handling / feedback** | Field-level form errors, an animated form confirmation, and an empty state ("No projects found") |
 | **A hand-drawn figure** (portfolio craft) | `hairline/table.js` — a Hairline *table for two* in the contact section; the chair under the pointer draws up to the table and the read-out names it, framed by `TableFigure.tsx` |
 
-## 5. State and Data Flow
 
-- **Project data** lives in `src/data/projects.ts` as a typed array. Adding a
-  project is a data change, not a markup change.
-- **Derived list.** `Projects.tsx` keeps raw inputs (`query`, `category`,
-  `sort`) in state and derives the visible list with `useMemo`, so it recomputes
-  only when an input changes.
-- **Expansion.** A `Set<string>` of expanded ids drives the animated detail panel.
-- **Theme.** `useTheme` stores `'light' | 'dark'` via `useLocalStorage` and
-  writes `<html data-theme>`, which all colour tokens react to.
-
-## 6. Data Handling Details
+## 5. Data Handling Details
 
 ### localStorage (`useLocalStorage.ts`)
 Reads and writes are wrapped in `try/catch` with a safe fallback, so
@@ -111,7 +104,7 @@ system preference.
 - Errors appear beside the field, are announced (`role="alert"`), and clear as
   the user types. A simulated send shows a spinner then a success message.
 
-## 7. Design System & Animation
+## 6. Design System & Animation
 
 **Layout & type.** Near-black ink on white; thin hairlines derived from the ink
 (`color-mix(in srgb, var(--ink) 12%, transparent)`); tabular monospace labels;
@@ -174,7 +167,7 @@ disables animations and shows all content immediately, and
 
 
 
-## 9. Compatibility
+## 7. Compatibility
 
 - Targets evergreen browsers (Chrome, Edge, Firefox, Safari). Uses
   `IntersectionObserver`, `matchMedia`, `color-mix()` and `svh` units, each with
@@ -183,7 +176,7 @@ disables animations and shows all content immediately, and
 - Hover-only affordances are always shown on touch devices via
   `@media (hover: none)`.
 
-## 10. Performance
+## 8. Performance
 
 - Only one runtime dependency beyond React (the zero-dependency drawably);
   production JS ≈ 83 KB gzipped.
@@ -193,7 +186,7 @@ disables animations and shows all content immediately, and
 - The contact figure is a separate static page, lazy-loaded in a sandboxed frame,
   so it costs nothing until the section is scrolled into view.
 
-## 11. Running Locally
+## 10. Running Locally
 
 ```bash
 npm install
@@ -205,8 +198,3 @@ npm run lint     # ESLint
 
 Requires Node.js 20.19+ or 22.12+ (the Vite 8 requirement).
 
-## 12. Known Limitations
-
-- The contact form is front-end only; no message is transmitted (the copy says so).
-
-- Project entries are static data, not fetched from a CMS.
