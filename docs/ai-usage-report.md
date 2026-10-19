@@ -79,3 +79,48 @@ reviewed the layout at desktop and mobile widths.
 AI suggestions were a starting point, not a substitute for my own decisions.
 I reviewed the code I kept and can explain how the features work and how they
 meet the assignment requirements.
+
+## Commit history and AI assistance
+
+The table below lists the commits on the `main` branch. “AI-assisted” identifies
+commits related to the React/Vite rebuild and features described above. Git does
+not record whether AI was used for an individual commit, so commits marked
+“no AI-assistance” cannot be attributed reliably from the available history alone.
+Generated agent-session checkpoints and local Git backup entries are not
+included.
+
+| Commit | Date | Commit message | AI assistance |
+| --- | --- | --- | --- |
+| `bf71481` | 2026-10-17 | add preview link to readme file | no AI-assistance |
+| `331ccf3` | 2026-10-17 | Configure Netlify build | no AI-assistance |
+| `a5598c0` | 2026-10-17 | update docs | AI-assisted documentation |
+| `c7ef4b0` | 2026-10-17 | delete unused file | no AI-assistance |
+| `f081768` | 2026-10-17 | fix project structure | AI-assisted rebuild |
+| `2c634a1` | 2026-10-17 | Change small header style | no AI-assistance |
+| `85b9fbe` | 2026-10-17 | remove unused code | no AI-assistance |
+| `4ca111c` | 2026-10-17 | fix header | no AI-assistance |
+| `ba70c7d` | 2026-10-17 | fix docs | AI-assisted documentation |
+| `442a0dc` | 2026-10-16 | update doccs | AI-assisted documentation |
+| `3a1b45e` | 2026-10-16 | delete unused files | no AI-assistance |
+| `89c3cd7` | 2026-10-16 | add Projects and Stack components with filtering and sorting functionality | AI-assisted feature |
+| `75cc8e3` | 2026-10-16 | add reveal components and hooks for scroll animations | AI-assisted feature |
+| `7aaf80c` | 2026-10-16 | add custom hooks for localStorage management and theme persistence | AI-assisted feature |
+| `8827b65` | 2026-10-16 | add BackToTop component and smooth scrolling helpers | AI-assisted feature |
+| `51444df` | 2026-10-16 | add main application structure with components for About, Contact, Footer, Header, Projects, and Stack | AI-assisted rebuild |
+| `43da508` | 2026-10-16 | update packages | AI-assisted rebuild |
+| `890f807` | 2026-10-16 | config vite correctly | AI-assisted rebuild |
+| `39efd17` | 2026-10-16 | delete unused files | no AI-assistance |
+| `d321e85` | 2026-09-18 | edit docs | no AI-assistance |
+| `98d0a14` | 2026-09-18 | add css styling for contact links | no AI-assistance |
+| `f2c0a84` | 2026-09-18 | change font weight of paragraph | no AI-assistance |
+| `26acba0` | 2026-09-18 | change font size from 15px to 16px | no AI-assistance |
+| `07cd5d1` | 2026-09-18 | add docs | no AI-assistance |
+| `72cd7ed` | 2026-09-18 | add social links | no AI-assistance |
+| `fc32799` | 2026-09-18 | add contact form along with css stylilng | no AI-assistance |
+| `d9eb9b4` | 2026-09-18 | add css styling for project section | no AI-assistance |
+| `15ee036` | 2026-09-18 | add project section | no AI-assistance |
+| `bc65cde` | 2026-09-18 | add css styling and responsiveness | no AI-assistance |
+| `ba966fa` | 2026-09-18 | add intro section and about section alongside with styling | no AI-assistance |
+| `684a1aa` | 2026-09-18 | chore: add required links to the header | no AI-assistance |
+| `0adf753` | 2026-09-17 | chore: add files | no AI-assistance |
+| `954d86e` | 2026-09-17 | Initial commit | no AI-assistance |
