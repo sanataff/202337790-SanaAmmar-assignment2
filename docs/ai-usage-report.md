@@ -124,3 +124,10 @@ included.
 | `684a1aa` | 2026-09-18 | chore: add required links to the header | no AI-assistance |
 | `0adf753` | 2026-09-17 | chore: add files | no AI-assistance |
 | `954d86e` | 2026-09-17 | Initial commit | no AI-assistance |
+
+## signed declaration
+I declare that this report and the attached evidence document all of my AI use in this assignment, with complete and unedited conversations, and that I understand and can explain all the code I submitted. I understand that undeclared AI use or a false declaration will be treated as plagiarism according to KFUPM regulations.
+Full Name: Sana Ammar
+Student ID: 202337790
+Date: 10/16/2026
+Signature: Sana
